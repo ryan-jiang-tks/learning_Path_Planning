@@ -1,0 +1,10 @@
+^F:\WORKFLOW\GIT\REPOSITORY\LEARNING_PATH_PLANNING\OUT\BUILD\VISUAL\CMAKEFILES\AF9489186245525261AB62D0A3665A85\GENERATE.STAMP.RULE
+setlocal
+F:\clib\CMake\bin\cmake.exe -SF:/Workflow/git/repository/learning_Path_Planning -BF:/Workflow/git/repository/learning_Path_Planning/out/build/visual --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/Workflow/git/repository/learning_Path_Planning/out/build/visual/MyPlanner.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,34 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "gcc",
+            "displayName": "GCC 14.2.0 x86_64-w64-mingw32 (ucrt64)",
+            "description": "Using compilers:  F:\\clib\\msys2\\ucrt64\\bin\\g++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/",
+                "CMAKE_CXX_COMPILER": "F:/clib/msys2/ucrt64/bin/g++.exe",
+                "DCMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "visual",
+            "displayName": "Visual Studio Community 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "DCMAKE_BUILD_TYPE": "Debug",
+                "VCPKG_TARGET_TRIPLET": "x64-windows"
+            }
+        }
+    ]
+}
